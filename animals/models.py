@@ -11,4 +11,7 @@ class Animal(models.Model):
     available = models.BooleanField(default=True)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to="courses/%Y/%m/%d/")
-    update = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
