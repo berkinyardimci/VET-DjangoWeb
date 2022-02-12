@@ -93,7 +93,7 @@
                 </div>
             </div><!-- end title -->
         
-			{% for course in courses %}
+			{% for animal in animals %}
 			
             <div class="row align-items-center">
 
@@ -101,7 +101,7 @@
 
 				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="post-media wow fadeIn">
-                        <img src="{{course.image.url}}" alt="" class="img-fluid img-rounded">
+                        <img src="{{animal.image.url}}" alt="" class="img-fluid img-rounded">
                     </div><!-- end media -->
                 </div><!-- end col -->
 
@@ -109,9 +109,9 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="message-box">						
-                        <h2>{{course.name}}</h2>
-                        <p>{{course.description}}</p>                      
-                        <a href="{% url 'course_detail' course.category.slug course.id %}" class="hover-btn-new orange"><span>Learn More</span></a>
+                        <h2>{{animal.name}}</h2>
+                        <p>{{animal.description}}</p>                      
+                        <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->	
 
@@ -119,7 +119,7 @@
 							
 				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="post-media wow fadeIn">
-                        <img src="{{course.image.url}}" alt="" class="img-fluid img-rounded">
+                        <img src="{{animal.image.url}}" alt="" class="img-fluid img-rounded">
                     </div><!-- end media -->
                 </div><!-- end col -->
 				
@@ -213,14 +213,14 @@
 			<div class="row text-left stat-wrap">
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-study"></i></span>
-					<p class="stat_count">12000</p>
-					<h3>Students</h3>
+					<p class="stat_count">{{total_user}}</p>
+					<h3>User</h3>
 				</div><!-- end col -->
 
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-online"></i></span>
-					<p class="stat_count">{{total_course}}</p>
-					<h3>Courses</h3>
+					<p class="stat_count">{{total_animals}}</p>
+					<h3>Animals</h3>
 				</div><!-- end col -->
 
 				<div class="col-md-4 col-sm-4 col-xs-12">
