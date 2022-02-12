@@ -19,9 +19,20 @@
 					</div>
 					<div class="post-content">
 						<div class="post-date">
-							{% if user.is_authenticated %}
+							{% if user.is_authenticated and request.user.id == animal.owner.id%}
+							<button type="submit" class="btn btn-outline-success rounded-0" data-toggle="modal"
+							data-target="#releaseModal">
+							<span>Update</span>
+							</button>
 
-							{% if course in enrolled_courses %}
+							<button type="submit" class="btn btn-outline-danger rounded-0" data-toggle="modal"
+							data-target="#releaseModal">
+							<a href="{% url 'index' %}"> <span>Delete</span></a>
+							</button>
+							{% endif %}
+
+							{% if user.is_authenticated %}
+							{% if animal in enrolled_courses %}
 							<button type="submit" class="btn btn-outline-danger rounded-0" data-toggle="modal"
 								data-target="#releaseModal">
 								<span>REALISE</span>
@@ -122,10 +133,10 @@
 				<h1>{{course.name}}</h1>
 			</div>
 			<div class="modal-footer">
-				<form action="#" method="POST">
+				<form action="{% url 'follow_animal' %}" method="POST">
 					{% csrf_token %}
 					<input type="hidden" name="user_id" value="{{user.id}}">
-					<input type="hidden" name="course_id" value="{{course.id}}">
+					<input type="hidden" name="animal_id" value="{{animal.id}}">
 					<input type="submit" value="I AM SURE" class="btn btn-success">
 				</form>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">

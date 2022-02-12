@@ -70,3 +70,12 @@ def user_dashboard(request):
     }
 
     return render (request,'dashboard.html',context)
+
+
+def follow_animal(request):
+    animal_id = request.POST['animal_id']
+    user_id = request.POST['user_id']
+    animal = Animal.objects.get(id = animal_id)
+    user = User.objects.get(id = user_id)
+    animal.followers.add(user)
+    return redirect('dashboard')
