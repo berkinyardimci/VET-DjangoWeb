@@ -36,20 +36,20 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="course-item">
 						<div class="image-blog">
-							<img src="{{course.image.url}}" alt="" class="img-fluid">
+							<img src="{{animal.image.url}}" alt="" class="img-fluid">
 						</div>
 						<div class="course-br">
 							<div class="course-title">
-								<h2><a href="{% url 'course_detail' course.category.slug course.id %}" title="">{{course.name}}</a></h2>
+								<h2><a href="{% url 'animal_detail' animal.type.slug animal.id %}" title="">{{animal.name}}</a></h2>
 							</div>
 							<div class="course-desc">
-								<p>{{course.description | truncatechars:140}}</p>
+								<p>{{animal.description | truncatechars:140}}</p>
 							</div>
 						</div>
                         <div class="course-meta-bot">
                             <ul>
-                                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{course.date|date:'d M Y'}}</li>
-                                <li><i class="fa fa-book" aria-hidden="true"></i> {{course.teacher}}</li>
+                                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{animal.date|date:'d M Y'}}</li>
+                                <li><i class="fa fa-book" aria-hidden="true"></i> {{animal.owner.username}}</li>
                             </ul>
                         </div>
 					</div>

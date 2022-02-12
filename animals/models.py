@@ -20,6 +20,7 @@ class Animal(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
     type = models.ForeignKey(Type,on_delete=models.DO_NOTHING, related_name='type')
     genus = models.ForeignKey(Genus,on_delete=models.DO_NOTHING, blank=True, null=True)
+    followers = models.ManyToManyField(User, blank=True, related_name='animal_follower')
     name = models.CharField(max_length=50)
     age = models.IntegerField()
     available = models.BooleanField(default=True)
