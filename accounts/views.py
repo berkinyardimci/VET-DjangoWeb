@@ -5,7 +5,7 @@ from django.views.generic.detail import DetailView
 
 
 
-class TeacherDetailView(DetailView):
+class OwnerDetailView(DetailView):
     model = User
     template_name= 'owner_detail.html' 
     context_object_name = 'user'
@@ -19,7 +19,7 @@ class TeacherDetailView(DetailView):
 
 
 
-def user_detail(request, pk):
+def _detail(request, pk):
     user = User.objects.get(id = pk)
     animals = user.animal_set.all()
 
