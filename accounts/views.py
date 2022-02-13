@@ -79,3 +79,12 @@ def follow_animal(request):
     user = User.objects.get(id = user_id)
     animal.followers.add(user)
     return redirect('dashboard')
+
+def remove_animal(request):
+    animal_id = request.POST['animal_id']
+    user_id = request.POST['user_id']
+    animal = Animal.objects.get(id = animal_id)
+    user = User.objects.get(id = user_id)
+
+    animal.followers.remove(user)
+    return redirect('dashboard')  

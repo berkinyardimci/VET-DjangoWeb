@@ -31,16 +31,17 @@
 							</button>
 							{% endif %}
 
-							{% if user.is_authenticated %}
-							{% if animal in enrolled_courses %}
+							{% if user.is_authenticated and request.user.id != animal.owner.id%}
+
+							{% if animal in followed_animals %}
 							<button type="submit" class="btn btn-outline-danger rounded-0" data-toggle="modal"
 								data-target="#releaseModal">
-								<span>REALISE</span>
+								<span>Remove</span>
 							</button>
 							{%else%}
 							<button type="submit" class="btn btn-outline-success rounded-0" data-toggle="modal"
 								data-target="#enrollModal">
-								<span>ENROLL</span>
+								<span>Follow</span>
 							</button>
 							{% endif %}
 							{% endif %}
@@ -97,16 +98,16 @@
 					<h3 class="widget-title">Categories</h3>
 					<ul>
 						{% for type in types %}
-						<li><a href="#">{{type.name}}</a></li>
+						<li><a href="{% url 'animals_by_type' type.slug %}">{{type.name}}</a></li>
 						{% endfor %}
 					</ul>
 				</div>
 				<div class="widget-tags">
 					<h3 class="widget-title">Search Tags</h3>
 					<ul class="tags">
-						{% for tag in tags %}
-						<li><a href="#"> {% if tag.slug in request.path %} <b>{{tag.name}}</b>
-						{% else %}{{tag.name}}{% endif %} </a></li>
+						{% for genu in genus %}
+						<li><a href="{% url 'animals_by_genus' genu.slug %}"> {% if genu.slug in request.path %} <b>{{genu.name}}</b>
+						{% else %}{{genu.name}}{% endif %} </a></li>
 						{% endfor %}
 					</ul>
 				</div>
@@ -162,10 +163,10 @@
 				<h1>{{course.name}}</h1>
 			</div>
 			<div class="modal-footer">
-				<form action="#" method="POST">
+				<form action="{% url 'remove_animal' %}" method="POST">
 					{% csrf_token %}
 					<input type="hidden" name="user_id" value="{{user.id}}">
-					<input type="hidden" name="course_id" value="{{course.id}}">
+					<input type="hidden" name="animal_id" value="{{animal.id}}">
 					<input type="submit" value="I AM SURE" class="btn btn-danger">
 				</form>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">
