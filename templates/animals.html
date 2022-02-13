@@ -5,7 +5,7 @@
 
 <div class="all-title-box">
 	<div class="container text-center">
-		<h1>Courses</h1>
+		<h1>All Animals</h1>
 	</div>
 </div>
 
@@ -21,7 +21,7 @@
 						<div class="course-item">
 							<div class="image-blog">
 								{% if animal.image %}
-								<img src="{{animal.image.url}}" alt="" class="img-fluid">
+								<a href="{% url 'animal_detail' animal.type.slug animal.id %}"><img  src="{{animal.image.url}}" alt="" class="img-fluid"></a>
 								{% endif %}
 							</div>
 							<div class="course-br">
@@ -30,8 +30,13 @@
 											title="">{{animal.name}} </a></h2>
 								</div>
 								<div class="course-desc">
-									<p>{{animal.description | truncatechars:140}}</p>
-									<p>{{animal.genus}}</p>
+									<h4> Açıklama: <p>{{animal.description | truncatechars:55}}</p></h4>
+									<hr>
+									<h4>Türü : {{animal.type}}</h4>
+									<hr>
+									<h4>Yaşı : {{animal.age}}</h4>
+									<hr>
+									<h4>Cinsi : {{animal.genus}}</h4>
 								</div>
 
 							</div>
@@ -53,7 +58,7 @@
 					<div class="site-search-area">
 						<form method="get" id="site-searchform" action="{% url 'search' %}">
 							<div>
-								<input class="input-text form-control" name="search" placeholder="Search keywords..."
+								<input class="input-text form-control" name="search" placeholder="Hayvan İsmi, Tür, Cins."
 									type="text">
 								<input id="searchsubmit" value="Search" type="submit">
 							</div>
@@ -61,7 +66,7 @@
 					</div>
 				</div>
 				<div class="widget-categories">
-					<h3 class="widget-title">Categories</h3>
+					<h3 class="widget-title">Types</h3>
 					<ul>
 						{% for type in types %}
 						<li><a href="{% url 'animals_by_type' type.slug %}">{{type.name}}</a></li>
@@ -70,7 +75,7 @@
 					</ul>
 				</div>
 				<div class="widget-tags">
-					<h3 class="widget-title">Search Tags</h3>
+					<h3 class="widget-title">Search Genus</h3>
 					<ul class="tags">
 						{% for genu in genus %}
 						<li><a href="{% url 'animals_by_genus' genu.slug %}">

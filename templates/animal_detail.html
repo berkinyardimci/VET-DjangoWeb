@@ -50,11 +50,11 @@
 							{% endif %}
 						</div>
 						<div class="meta-info-blog">
-							<span><i class="fa fa-calendar"></i> {{animal.date|date:'d M Y'}}</a> </span>
-							<span><i class="fa fa-comments"></i> Students</span>
+							<span><i class="fa fa-calendar"></i> <h5>Oluşturulma Tarihi :{{animal.created|date:'d M Y'}}</a></h3></span>
+							<span><i class="fa fa-comments"></i> <h5> Hayvan sahibi: {{animal.owner.username}}</h5> </span>
 						</div>
 						<div class="blog-title">
-							<h2><a href="#" title="">{{animal.name}}</a></h2>
+							<h2> {{animal.name}} Hakkında Bazı Bilgiler</h2>
 						</div>
 						<div class="blog-desc">
 							<blockquote class="default">
@@ -67,11 +67,13 @@
 
 				<div class="blog-author">
 					<div class="author-bio">
-						<h3 class="author_name"><a
-								href="{% url 'user_detail' animal.owner.id %}">{{animal.owner.username}}</a></h3>
-						<h5> {{animal.owner.username}}</h5>
+						<h3 class="author_name">
+							<h3> <strong><a href="{% url 'user_detail' animal.owner.id %}"> Hayvan Sahibi: {{animal.owner.username}}</a> </strong></h3>
+							<h5> Kullanıcı İsmi : {{animal.owner.username}}</h5> 
+							<h5> Email : {{animal.owner.email}}</h5> 
+							<h5> İsim : {{animal.owner.first_name}}</h5> 
+							<h5> Soyisim : {{animal.owner.last_name}}</h5> 
 						<p class="author_det">
-							{{animal.owner.username}}
 						</p>
 					</div>
 					<div class="author-desc">
@@ -92,14 +94,14 @@
 						<form method="get" id="site-searchform" action="#">
 							<div>
 								<input class="input-text form-control" name="search-k" id="search-k"
-									placeholder="Search keywords..." type="text">
+									placeholder="Hayvan İsmi, Tür, Cins." type="text">
 								<input id="searchsubmit" value="Search" type="submit">
 							</div>
 						</form>
 					</div>
 				</div>
 				<div class="widget-categories">
-					<h3 class="widget-title">Categories</h3>
+					<h3 class="widget-title">Types</h3>
 					<ul>
 						{% for type in types %}
 						<li><a href="{% url 'animals_by_type' type.slug %}">{{type.name}}</a></li>
@@ -107,7 +109,7 @@
 					</ul>
 				</div>
 				<div class="widget-tags">
-					<h3 class="widget-title">Search Tags</h3>
+					<h3 class="widget-title">Search Genus</h3>
 					<ul class="tags">
 						{% for genu in genus %}
 						<li><a href="{% url 'animals_by_genus' genu.slug %}"> {% if genu.slug in request.path %}
@@ -128,13 +130,13 @@
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-title" id="enrollModalLabel">Enroll The Course</h2>
+				<h2 class="modal-title" id="enrollModalLabel">Follow the Animal</h2>
 				<button type="button" class="close" data-dismiss="modal">
 					<span>&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<p>You will enroll the course below:</p>
+				<p>You will follow the animal {{obj}}:</p>
 				<h1>{{course.name}}</h1>
 			</div>
 			<div class="modal-footer">
@@ -157,13 +159,13 @@
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-title" id="releaseModalLabel">Enroll The Course</h2>
+				<h2 class="modal-title" id="releaseModalLabel">Remove The Animal</h2>
 				<button type="button" class="close" data-dismiss="modal">
 					<span>&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<p>You will release the course below:</p>
+				<p>You will remove the animal {{obj}}:</p>
 				<h1>{{course.name}}</h1>
 			</div>
 			<div class="modal-footer">

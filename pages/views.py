@@ -18,8 +18,6 @@ class IndexView(TemplateView):
         context['total_user'] = User.objects.all().count
         return context
 
-class AboutView(TemplateView):
-    template_name= 'about.html'
 
 class ContactView(SuccessMessageMixin, FormView):
     template_name = 'contact.html'

@@ -14,20 +14,12 @@
             <div class="row"> 
                 <div class="col-lg-12 blog-post-single">
 
-					<div class="blog-author">
-						<div class="author-bio">
-							<h3 class="author_name">{{user.first_name}} {{user.last_name}}</h3>
-						</div>
-					</div>
-					
-
-					
+				
                 </div><!-- end col -->
             </div><!-- end row -->
-
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="text-center my-5">Kaydettikleriniz {{user.username}}</h2>
+                    <h2 class="text-center my-5">{{user.username}}'in Kayddettikleri </h2>
                 </div> 
 
                 {% for animal in animals %}
@@ -48,7 +40,7 @@
 						</div>
                         <div class="course-meta-bot">
                             <ul>
-                                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{animal.date|date:'d M Y'}}</li>
+                                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{animal.created|date:'d M Y'}}</li>
                                 <li><i class="fa fa-book" aria-hidden="true"></i> {{animal.owner.username}}</li>
                             </ul>
                         </div>
