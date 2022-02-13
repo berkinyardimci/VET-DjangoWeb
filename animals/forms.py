@@ -23,7 +23,7 @@ class AnimalForm(forms.ModelForm):
          'placeholder' : 'genus'
      }))
 
-    age= forms.CharField(widget=forms.TextInput(attrs={
+    age= forms.CharField(widget=forms.NumberInput(attrs={
          'class': 'input',
          'placeholder' : 'age'
      })) 

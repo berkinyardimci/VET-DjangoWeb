@@ -3807,6 +3807,7 @@ a.link-style3 {
     line-height: 25px;
 }
 .tags li a {
+    border-radius: 15px;
     border: 1px solid #eea412;
     color: #212121;
 	text-transform: capitalize;

@@ -24,13 +24,13 @@
 						<div class="post-date">
 							{% if user.is_authenticated and request.user.id == animal.owner.id%}
 							<button type="submit" class="btn btn-outline-success rounded-0" data-toggle="modal"
-							data-target="#releaseModal">
-							<a href="{% url 'update_animal' animal.type.slug animal.id %}"><span>Update</span></a>
+								data-target="#releaseModal">
+								<a href="{% url 'update_animal' animal.type.slug animal.id %}"><span>Update</span></a>
 							</button>
 
 							<button type="submit" class="btn btn-outline-danger rounded-0" data-toggle="modal"
-							data-target="#releaseModal">
-							<a href="{% url 'delete_animal' animal.type.slug animal.id %}"> <span>Delete</span></a>
+								data-target="#">
+								<a href="{% url 'delete_animal' animal.type.slug animal.id %}"><span>Delete</span></a>
 							</button>
 							{% endif %}
 
@@ -67,7 +67,8 @@
 
 				<div class="blog-author">
 					<div class="author-bio">
-						<h3 class="author_name"><a href="{% url 'user_detail' animal.owner.id %}">{{animal.owner.username}}</a></h3>
+						<h3 class="author_name"><a
+								href="{% url 'user_detail' animal.owner.id %}">{{animal.owner.username}}</a></h3>
 						<h5> {{animal.owner.username}}</h5>
 						<p class="author_det">
 							{{animal.owner.username}}
@@ -109,8 +110,9 @@
 					<h3 class="widget-title">Search Tags</h3>
 					<ul class="tags">
 						{% for genu in genus %}
-						<li><a href="{% url 'animals_by_genus' genu.slug %}"> {% if genu.slug in request.path %} <b>{{genu.name}}</b>
-						{% else %}{{genu.name}}{% endif %} </a></li>
+						<li><a href="{% url 'animals_by_genus' genu.slug %}"> {% if genu.slug in request.path %}
+								<b>{{genu.name}}</b>
+								{% else %}{{genu.name}}{% endif %} </a></li>
 						{% endfor %}
 					</ul>
 				</div>
@@ -118,7 +120,6 @@
 		</div><!-- end row -->
 	</div><!-- end container -->
 </div><!-- end section -->
-
 
 
 <!-- ENROLL Modal -->

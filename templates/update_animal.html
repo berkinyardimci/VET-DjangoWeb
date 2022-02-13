@@ -17,10 +17,47 @@
                     <div class="tab-pane active" id="">
                         <form method="POST" enctype='multipart/form-data' role="form" class="form-horizontal">
                             {% csrf_token %}
-                            <fieldset class="form-group">
-                                {{form.media}}
-                                {{ form.as_p }}
-                            </fieldset>
+
+                            <div class="form-group">
+                                <label for="animal_type">Enter a Type</label>
+                                <input required type="text" value="{{animal.type.name}}" name="type" list="type-list" />
+                                <datalist id="type-list">
+                                  <select id="animal_type" >
+                                    {% for type in types %}
+                                    <option value="{{type.name}}">{{type.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="animal_genus">Enter a Genus</label>
+                                <input required type="text" value="{{animal.genus.name}}" name="genus" list="genus-list" />
+                                <datalist id="genus-list">
+                                  <select id="animal_genus" >
+                                    {% for genu in genus %}
+                                    <option value="{{genu.name}}">{{genu.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                                </datalist>
+                            </div>
+                  
+                              <div class="form-group">
+                                <label for="animal_name">Animal Name</label>
+                                {{form.name}}
+                              </div>
+                  
+                              <div class="form-group">
+                                <label for="room_description">Animal description</label>
+                                {{form.description}}
+                              </div>
+                              <div class="form-group">
+                                <label for="animal_age">Animal age</label>
+                                {{form.age}}
+                              </div>
+                              <div class="form-group">
+                                <label for="animal_image">Animal image</label>
+                                {{form.image}}
+                              </div>
 
 
 
