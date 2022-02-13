@@ -95,3 +95,40 @@ def create_animal(request):
         context = {'form':form}
         return render (request, 'create_animal.html', context)
 
+@login_required(login_url='login')
+def update_animal(request, animal_id, type_slug):
+    animal = Animal.objects.get(id = animal_id, type__slug = type_slug)
+    form = AnimalForm(request.POST, request.FILES, instance=animal)
+    types = Type.objects.all()
+    genus = Genus.objects.all()    
+
+    if request.user != animal.owner:
+        return messages.error('Your are not allowed here !!')
+
+
+    if request.method == 'POST':
+        type_name = request.POST.get('type')
+        genus_name = request.POST.get('genus')
+        types, created = Type.objects.get_or_create(name = type_name)
+        genus, created = Genus.objects.get_or_create(name = genus_name)
+
+        animal.name = request.POST.get('name')
+        animal.type = types
+        animal.genus = genus        
+        animal.description = request.POST.get('description')
+        animal.age = request.POST.get('age')
+        animal.image = request.FILES.get('image')
+        animal.save()
+        return redirect('index')  
+
+    context = {'form': form,'types':types,'genus':genus }
+    return render(request, 'update_animal.html', context)    
+
+def delete_animal(request, animal_id, type_slug):
+    animal = Animal.objects.get(id = animal_id, type__slug = type_slug)
+    
+    if request.method == 'POST':
+        animal.delete()
+        return redirect('animals')
+
+    return render(request, 'delete.html', {'obj':animal})      

@@ -9,6 +9,7 @@ urlpatterns = [
     path('search', views.search, name="search"), 
 
     path('create_animal', views.create_animal, name="create_animal"),
-    # path('update/<slug:type_slug>/<int:animal_id>', views.update_animal, name="update_animal"),
+    path('update/<slug:type_slug>/<int:animal_id>', views .update_animal, name="update_animal"),
+    path('delete/<slug:type_slug>/<int:animal_id>', views.delete_animal, name="delete_animal"), 
 
 ]
