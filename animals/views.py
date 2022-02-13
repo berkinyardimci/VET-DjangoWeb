@@ -81,7 +81,7 @@ def create_animal(request):
             name = request.POST.get('name'),
             age = request.POST.get('age'),
             description = request.POST.get('description'),
-            image = request.POST.get('image'),
+            image = request.FILES.get('image'),
         )
         messages.info(request, 'Başarılıııı')
         return redirect('animals')
@@ -95,33 +95,3 @@ def create_animal(request):
         context = {'form':form}
         return render (request, 'create_animal.html', context)
 
-
-# @login_required(login_url='login')
-# def create_animal(request):
-#     if request.method == 'POST':
-#         form = AnimalForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             current_user = request.user
-#             post = Animal()
-#             post.owner_id = current_user.id
-#             post.name = form.cleaned_data['name']
-#             post.type.name = form.cleaned_data['type']
-#             post.genus.name = form.cleaned_data['genus']
-#             post.age = form.cleaned_data['age']
-#             post.description = form.cleaned_data['description']
-#             post.image = form.cleaned_data['image']
-#             post.save()
-#             messages.success(request, 'Ekleme basarili')
-#             return redirect('animals')
-#         else:
-#             messages.success(request, 'Content Form Error:' + str(form.errors))
-#             return redirect('index')
-#     else:
-
-#         form = AnimalForm()
-#         context = {
-
-#             'form': form,
-
-#         }
-#         return render(request, 'create_animal.html', context)

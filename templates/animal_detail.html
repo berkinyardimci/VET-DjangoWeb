@@ -9,6 +9,9 @@
 	</div>
 </div>
 
+<!-- % url 'update_animal' animal.type.slug animal.id % -->
+
+
 <div id="overviews" class="section wb">
 	<div class="container">
 		<div class="row">
@@ -22,7 +25,7 @@
 							{% if user.is_authenticated and request.user.id == animal.owner.id%}
 							<button type="submit" class="btn btn-outline-success rounded-0" data-toggle="modal"
 							data-target="#releaseModal">
-							<span>Update</span>
+							<a href="#"><span>Update</span></a>
 							</button>
 
 							<button type="submit" class="btn btn-outline-danger rounded-0" data-toggle="modal"

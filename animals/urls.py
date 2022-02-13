@@ -8,6 +8,7 @@ urlpatterns = [
     path('genus/<slug:genus_slug>', views.animal_list, name="animals_by_genus"),
     path('search', views.search, name="search"), 
 
-    path('create_animal', views.create_animal, name="create_animal"),   
+    path('create_animal', views.create_animal, name="create_animal"),
+    # path('update/<slug:type_slug>/<int:animal_id>', views.update_animal, name="update_animal"),
 
 ]

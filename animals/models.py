@@ -34,7 +34,7 @@ class Animal(models.Model):
     age = models.IntegerField()
     available = models.BooleanField(default=True)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to="courses/%Y/%m/%d/")
+    image = models.ImageField(upload_to="animal/%Y/%m/%d/")
     created = models.DateTimeField(auto_now=True)
 
     def __str__(self):
