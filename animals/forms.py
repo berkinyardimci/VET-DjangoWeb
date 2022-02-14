@@ -2,12 +2,6 @@ from django import forms
 from .models import Animal
 
 
-# class AnimalForm(ModelForm):
-#     class Meta:
-#         model = Animal
-#         fields= '__all__'
-#         exclude = ['owner','followers','available']
-
 class AnimalForm(forms.ModelForm):
     name= forms.CharField(widget=forms.TextInput(attrs={
          'class': 'input',

@@ -1,7 +1,6 @@
 from django.shortcuts import get_object_or_404, render,redirect
 from . models import Animal, Type, Genus
 from django.db.models import Q
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import AnimalForm
 from django.contrib import messages
@@ -83,12 +82,9 @@ def create_animal(request):
             description = request.POST.get('description'),
             image = request.FILES.get('image'),
         )
-        messages.info(request, 'Başarılıııı')
+        messages.info(request, 'Ekleme Başarılı')
         return redirect('animals')
 
-        # else:
-        #     messages.info(request, 'Check Your Usarname and Password')
-        #     return redirect('index')
 
     else:
         form = AnimalForm()
