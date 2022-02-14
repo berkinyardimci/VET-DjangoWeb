@@ -24,19 +24,19 @@
 `cd VET-DjangoWeb`
 
 ##### 3-Create a Virtual environment
-- `C:\Users\Admin\Desktop\VET-DjangoWeb>python -m venv env`
+- `..\VET-DjangoWeb>python -m venv env`
 
 ##### 4-Activate the Virtual environment
-- `C:\Users\Admin\Desktop\VET-DjangoWeb>env\Scripts\activate`
+- `..\VET-DjangoWeb>env\Scripts\activate`
 
 ##### 5-Download requirements
-- `(env) C:\Users\Admin\Desktop\VET-DjangoWeb>pip install -r requirements.txt`
+- `..\VET-DjangoWeb>pip install -r requirements.txt`
 
 ##### 6-Migrate
-- `(env) C:\Users\Admin\Desktop\VET-DjangoWeb>python manage.py migrate`
+- `..\VET-DjangoWeb>python manage.py migrate`
 
 ##### 6-Run Server
-- `(env) C:\Users\Admin\Desktop\VET-DjangoWeb>python manage.py runserver`
+- `..\VET-DjangoWeb>python manage.py runserver`
 
 ### About the Project
 - You can login, logout and register
