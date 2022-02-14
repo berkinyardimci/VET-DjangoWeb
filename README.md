@@ -23,22 +23,24 @@
 `cd VET-DjangoWeb`
 
 ##### 3-Create a Virtual environment
-- C:\Users\Admin\Desktop\VET-DjangoWeb>python -m venv env
+- `C:\Users\Admin\Desktop\VET-DjangoWeb>python -m venv env`
 
 ##### 4-Activate the Virtual environment
-- C:\Users\Admin\Desktop\VET-DjangoWeb>env\Scripts\activate
+- `C:\Users\Admin\Desktop\VET-DjangoWeb>env\Scripts\activate`
 
 ##### 5-Download requirements
-- (env) C:\Users\Admin\Desktop\VET-DjangoWeb>pip install -r requirements.txt
+- `(env) C:\Users\Admin\Desktop\VET-DjangoWeb>pip install -r requirements.txt`
 
 ##### 6-Migrate
-- (env) C:\Users\Admin\Desktop\VET-DjangoWeb>python manage.py migrate
+- `(env) C:\Users\Admin\Desktop\VET-DjangoWeb>python manage.py migrate`
 
 ##### 6-Run Server
-- (env) C:\Users\Admin\Desktop\VET-DjangoWeb>python manage.py runserver
+- `(env) C:\Users\Admin\Desktop\VET-DjangoWeb>python manage.py runserver`
 
 ### About the Project
 - You can login, logout and register
 - You can Create, Delete and Update on only your animal but you have to login
 - You can follow other users animal, also remove if you followed
 
+### Contact
+- berkinyardimci98@gmail.com
