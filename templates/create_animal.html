@@ -9,7 +9,7 @@
         <div class="modal-content">
             <div class="modal-header tit-up">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Register</h4>
+                <h4 class="modal-title">Create Animal</h4>
             </div>
             <div class="modal-body customer-box">
                 <!-- Tab panes -->
@@ -28,7 +28,7 @@
 
                             <div class="row">
                                 <div class="col-sm-10">
-                                    <input type="submit" value="Register" class="btn btn-light btn-radius btn-brd grd1">
+                                    <input type="submit" value="Create" class="btn btn-light btn-radius btn-brd grd1">
                                 </div>
                             </div>
                         </form>
@@ -49,7 +49,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-            <div id="home" class="first-section" style="background-image:url('{%static " images/slider-01.jpg" %} ');">
+            <div id="home" class="first-section" style="background-image:url('{%static "images/slider-11.jpg" %} ');">
                     <div class="dtab">
                         <div class="container">
                             <div class="row">
@@ -57,9 +57,9 @@
                                     <div class="big-tagline">
                                         <h2><strong>Django Wet </strong> Web development</h2>
                                         <p class="lead">. </p>
-                                            <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                            <a href="{% url 'index' %}" class="hover-btn-new"><span>Anasayfa</span></a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                            <a href="{% url 'contact' %}" class="hover-btn-new"><span>Contact Us</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->            
@@ -68,7 +68,7 @@
                 </div><!-- end section -->
             </div>
             <div class="carousel-item">
-                <div id="home" class="first-section" style="background-image:url(' {%static "images/slider-02.jpg" %} ');">
+                <div id="home" class="first-section" style="background-image:url('{%static "images/slider-02.jpg" %}');">
                     <div class="dtab">
                         <div class="container">
                             <div class="row">
@@ -76,9 +76,9 @@
                                     <div class="big-tagline">
                                         <h2 data-animation="animated zoomInRight">WET Website <strong>with Django</strong></h2>
                                         <p class="lead" data-animation="animated fadeInLeft"> </p>
-                                            <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                            <a href="{% url 'index' %}" class="hover-btn-new"><span>Contact Us</span></a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                            <a href="{% url 'contact' %}" class="hover-btn-new"><span>Ana sayfa</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->            
@@ -86,26 +86,6 @@
                     </div>
                 </div><!-- end section -->
             </div>
-            <div class="carousel-item">
-                <div id="home" class="first-section" style="background-image:url(' {% static "images/slider-03.jpg" %} ');">
-                    <div class="dtab">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 text-center">
-                                    <div class="big-tagline">
-                                        <h2 data-animation="animated zoomInRight"><strong>VPS Servers</strong> Company</h2>
-                                        <p class="lead" data-animation="animated fadeInLeft">1 IP included with each server 
-                                            Your Choice of any OS (CentOS, Windows, Debian, Fedora)
-                                            FREE Reboots</p>
-                                            <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="#" class="hover-btn-new"><span>Read More</span></a>
-                                    </div>
-                                </div>
-                            </div><!-- end row -->            
-                        </div><!-- end container -->
-                    </div>
-                </div><!-- end section -->
-            </div>
+          
     
     {% endblock %}

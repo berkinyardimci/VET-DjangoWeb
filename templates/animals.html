@@ -43,7 +43,7 @@
 							<div class="course-meta-bot">
 								<ul>
 									<li><i class="fa fa-calendar" aria-hidden="true"></i> {{animal.created|date:'d M Y'}}</li>
-									<li><i class="fa fa-book" aria-hidden="true"></i> <a href="{% url 'user_detail' animal.owner.id %}">{{animal.owner}}</a> </li>
+									<li><i class="fa fa-book" aria-hidden="true"></i> <a href="{% url 'user_detail' animal.owner.id %}"><strong>{{animal.owner}}</strong></a> </li>
 								</ul>
 							</div>
 						</div>

@@ -24,7 +24,7 @@
 						<div class="post-date">
 							{% if user.is_authenticated and request.user.id == animal.owner.id%}
 							<button type="submit" class="btn btn-outline-success rounded-0" data-toggle="modal"
-								data-target="#releaseModal">
+								data-target="#">
 								<a href="{% url 'update_animal' animal.type.slug animal.id %}"><span>Update</span></a>
 							</button>
 

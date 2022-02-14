@@ -14,7 +14,7 @@ class AnimalForm(forms.ModelForm):
 
     genus= forms.CharField(widget=forms.TextInput(attrs={
          'class': 'input',
-         'placeholder' : 'genus'
+         'placeholder' : 'Cins'
      }))
 
     age= forms.CharField(widget=forms.NumberInput(attrs={

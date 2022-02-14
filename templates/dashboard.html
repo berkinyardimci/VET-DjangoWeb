@@ -28,7 +28,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="course-item">
 						<div class="image-blog">
-							<img src="{{animal.image.url}}" alt="" class="img-fluid">
+							<a href="{% url 'animal_detail' animal.type.slug animal.id %}"><img src="{{animal.image.url}}" alt="" class="img-fluid"></a>
 						</div>
 						<div class="course-br">
 							<div class="course-title">
@@ -41,7 +41,7 @@
                         <div class="course-meta-bot">
                             <ul>
                                 <li><i class="fa fa-calendar" aria-hidden="true"></i> {{animal.created|date:'d M Y'}}</li>
-                                <li><i class="fa fa-book" aria-hidden="true"></i> {{animal.owner.username}}</li>
+                                <a href="{% url 'user_detail' animal.owner.id %}"><li><i class="fa fa-book" aria-hidden="true"></i> <strong>{{animal.owner.username}}</strong></li></a>
                             </ul>
                         </div>
 					</div>

@@ -82,7 +82,7 @@ def create_animal(request):
             description = request.POST.get('description'),
             image = request.FILES.get('image'),
         )
-        messages.info(request, 'Ekleme Başarılı')
+        
         return redirect('animals')
 
 
