@@ -9,6 +9,7 @@
 
 ### Requirements
 - python 3.10.0
+- SQLite
 - asgiref 3.5.0
 - Django 4.0.2  
 - Pillow 9.0.1  
