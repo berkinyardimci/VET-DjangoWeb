@@ -4,8 +4,8 @@
 - Requirements
 - Stages
 - About the Project
+- Superuser
 - Contact
-
 
 ### Requirements
 - python 3.10.0
@@ -44,7 +44,7 @@
 - You can Create, Delete and Update on only your animal but you have to login.
 - You can follow other users animal, also remove if you followed.
 
-#### Superuser
+### Superuser
 - username: admin
 - password: 123456
 - Also you can createsuperuser --> `python manage.py createsuperuser`
