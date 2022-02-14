@@ -48,6 +48,6 @@
 - username: admin
 - password: 123456
 - Also you can createsuperuser --> `python manage.py createsuperuser`
-- 
+
 ### Contact with me
 - berkinyardimci98@gmail.com
