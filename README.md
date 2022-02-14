@@ -43,10 +43,11 @@
 - You can login, logout and register.
 - You can Create, Delete and Update on only your animal but you have to login.
 - You can follow other users animal, also remove if you followed.
-### About the Project
+
 #### Superuser
 - username: admin
 - password: 123456
 - Also you can createsuperuser --> `python manage.py createsuperuser`
+- 
 ### Contact with me
 - berkinyardimci98@gmail.com
