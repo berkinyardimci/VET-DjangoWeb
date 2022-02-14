@@ -2,7 +2,7 @@
 
 ### Table of Contents
 - Requirements
-- Prerequisites
+- Stages
 - About the Project
 - Contact
 
@@ -16,8 +16,8 @@
 - sqlparse 0.4.2
 - tzdata 2021.5 
 
-### Prerequisites
-##### 1-first clone the project
+### Stages
+##### 1-First clone the project
 ` git clone https://github.com/berkinyardimci/VET-DjangoWeb.git `
 
 ##### 2-Inside the project files
@@ -32,16 +32,17 @@
 ##### 5-Download requirements
 - `pip install -r requirements.txt`
 
-##### 6-Migrate
-- `python manage.py migrate`
-
 ##### 6-Run Server
 - `python manage.py runserver`
 
+##### 7-Ready for Using
+- http://127.0.0.1:8000/
+ 
+
 ### About the Project
-- You can login, logout and register
-- You can Create, Delete and Update on only your animal but you have to login
-- You can follow other users animal, also remove if you followed
+- You can login, logout and register.
+- You can Create, Delete and Update on only your animal but you have to login.
+- You can follow other users animal, also remove if you followed.
 
 ### Contact
 - berkinyardimci98@gmail.com
