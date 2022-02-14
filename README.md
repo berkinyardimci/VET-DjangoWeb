@@ -17,10 +17,10 @@
 - tzdata 2021.5 
 
 ### Stages
-##### 1-First clone the project
+##### 1-Clone the project
 ` git clone https://github.com/berkinyardimci/VET-DjangoWeb.git `
 
-##### 2-Inside the project files
+##### 2-Go inside the project file
 `cd VET-DjangoWeb`
 
 ##### 3-Create a Virtual environment
@@ -35,7 +35,7 @@
 ##### 6-Run Server
 - `python manage.py runserver`
 
-##### 7-Ready for Using
+##### 7-Ready for Using the project
 - http://127.0.0.1:8000/
  
 
@@ -44,5 +44,5 @@
 - You can Create, Delete and Update on only your animal but you have to login.
 - You can follow other users animal, also remove if you followed.
 
-### Contact
+### Contact with me
 - berkinyardimci98@gmail.com
